@@ -1,0 +1,17 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Administrator\Pulpit\SWB\Lab4\Programy\2\zad2.uvproj
+Project File Date:  05/23/2022
+
+<h2>Output:</h2>
+compiling zad2.c...
+zad2.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling zad2.c...
+linking...
+Program Size: data=12.0 xdata=0 code=242
+creating hex file from "zad2"...
+"zad2" - 0 Error(s), 0 Warning(s).

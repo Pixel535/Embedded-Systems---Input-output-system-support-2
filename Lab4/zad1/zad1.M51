@@ -1,0 +1,95 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/24/2022  12:17:22  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE zad1.obj TO zad1 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  zad1.obj (ZAD1)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  zad1 (ZAD1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     0017H     UNIT         ?PR?MAIN?ZAD1
+            CODE    0025H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0031H     0009H     UNIT         ?PR?TIMER0_ISR?ZAD1
+
+
+
+OVERLAY MAP OF MODULE:   zad1 (ZAD1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ZAD1
+
+
+
+SYMBOL TABLE OF MODULE:  zad1 (ZAD1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ZAD1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0031H         PUBLIC        timer0_isr
+  B:00A8H.7       PUBLIC        EA
+  C:000EH         PUBLIC        main
+  B:00B0H.2       PUBLIC        SW
+  B:00A0H.0       PUBLIC        LEDZielona
+  D:0089H         PUBLIC        TMOD
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2022  12:17:22  PAGE 2
+
+
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  B:00A0H.7       PUBLIC        LEDZolta
+  -------         PROC          TIMER0_ISR
+  C:0031H         LINE#         7
+  C:0031H         LINE#         9
+  C:0034H         LINE#         10
+  C:0037H         LINE#         11
+  C:0039H         LINE#         12
+  -------         ENDPROC       TIMER0_ISR
+  -------         PROC          MAIN
+  C:000EH         LINE#         14
+  C:000EH         LINE#         15
+  C:000EH         LINE#         16
+  C:0010H         LINE#         17
+  C:0013H         LINE#         18
+  C:0016H         LINE#         19
+  C:0019H         LINE#         20
+  C:001BH         LINE#         21
+  C:001DH         LINE#         22
+  C:001FH         LINE#         23
+  C:001FH         LINE#         24
+  C:001FH         LINE#         25
+  C:0023H         LINE#         26
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ZAD1
+
+Program Size: data=9.0 xdata=0 code=50
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

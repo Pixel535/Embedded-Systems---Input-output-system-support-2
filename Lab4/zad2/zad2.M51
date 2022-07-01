@@ -1,0 +1,197 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/24/2022  12:18:09  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE zad2.obj TO zad2 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  zad2.obj (ZAD2)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  zad2 (ZAD2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?ZAD2
+            DATA    000AH     0001H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     000DH     UNIT         ?PR?SLEEP?ZAD2
+            CODE    0013H     0008H     UNIT         ?PR?MAIN?ZAD2
+            CODE    001BH     0003H     ABSOLUTE     
+            CODE    001EH     005FH     UNIT         ?PR?ISR_INT0?ZAD2
+            CODE    007DH     0032H     UNIT         ?PR?ISR_TIMER1?ZAD2
+            CODE    00AFH     002CH     UNIT         ?PR?INIT?ZAD2
+            CODE    00DBH     000CH     UNIT         ?C_C51STARTUP
+            CODE    00E7H     0007H     UNIT         ?PR?DEFAULT?ZAD2
+            CODE    00EEH     0004H     UNIT         ?CO?ZAD2
+
+
+
+OVERLAY MAP OF MODULE:   zad2 (ZAD2)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?PR?ISR_TIMER1?ZAD2            -----    -----
+  +--> ?CO?ZAD2
+
+*** NEW ROOT ***************************************************
+
+?PR?ISR_INT0?ZAD2              000AH    0001H
+  +--> ?PR?SLEEP?ZAD2
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?ZAD2
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2022  12:18:09  PAGE 2
+
+
+?PR?MAIN?ZAD2                  -----    -----
+  +--> ?PR?DEFAULT?ZAD2
+  +--> ?PR?INIT?ZAD2
+
+
+
+SYMBOL TABLE OF MODULE:  zad2 (ZAD2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ZAD2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:007DH         PUBLIC        ISR_Timer1
+  B:00A8H.7       PUBLIC        EA
+  B:00B0H.2       PUBLIC        P3_2
+  C:00AFH         PUBLIC        Init
+  C:0006H         PUBLIC        sleep
+  D:00CBH         PUBLIC        RCAP2H
+  D:00CAH         PUBLIC        RCAP2L
+  C:0013H         PUBLIC        main
+  B:00C8H.4       PUBLIC        TCLK
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A0H.4       PUBLIC        Key_1
+  B:00A0H.5       PUBLIC        Key_2
+  D:0008H         PUBLIC        ind
+  B:00A0H.6       PUBLIC        Key_3
+  B:00A0H.7       PUBLIC        Key_4
+  C:00E7H         PUBLIC        Default
+  B:00A8H.3       PUBLIC        ET1
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  D:008DH         PUBLIC        TH1
+  D:00CDH         PUBLIC        TH2
+  D:008BH         PUBLIC        TL1
+  D:00CCH         PUBLIC        TL2
+  B:0080H.0       PUBLIC        LED
+  B:0088H.6       PUBLIC        TR1
+  B:00C8H.2       PUBLIC        TR2
+  D:0009H         PUBLIC        Counter
+  D:00C8H         PUBLIC        T2CON
+  C:001EH         PUBLIC        ISR_INT0
+  -------         PROC          INIT
+  C:00AFH         LINE#         19
+  C:00AFH         LINE#         20
+  C:00AFH         LINE#         21
+  C:00B2H         LINE#         22
+  C:00B5H         LINE#         23
+  C:00B7H         LINE#         24
+  C:00BAH         LINE#         25
+  C:00BCH         LINE#         27
+  C:00BEH         LINE#         28
+  C:00C0H         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2022  12:18:09  PAGE 3
+
+
+  C:00C3H         LINE#         31
+  C:00C5H         LINE#         32
+  C:00C8H         LINE#         33
+  C:00CEH         LINE#         34
+  C:00D4H         LINE#         35
+  C:00D6H         LINE#         36
+  C:00D8H         LINE#         37
+  C:00DAH         LINE#         38
+  -------         ENDPROC       INIT
+  -------         PROC          ISR_TIMER1
+  -------         DO            
+  C:00EEH         SYMBOL        Kod
+  -------         ENDDO         
+  C:007DH         LINE#         40
+  C:008AH         LINE#         43
+  C:0093H         LINE#         44
+  C:00A4H         LINE#         45
+  -------         ENDPROC       ISR_TIMER1
+  -------         PROC          SLEEP
+  -------         DO            
+  D:0007H         SYMBOL        x
+  D:0006H         SYMBOL        y
+  -------         ENDDO         
+  C:0006H         LINE#         47
+  C:0006H         LINE#         48
+  C:0006H         LINE#         50
+  C:0008H         LINE#         51
+  C:0012H         LINE#         52
+  -------         ENDPROC       SLEEP
+  -------         PROC          ISR_INT0
+  -------         DO            
+  D:000AH         SYMBOL        Key
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:001EH         LINE#         54
+  C:002BH         LINE#         56
+  C:002DH         LINE#         57
+  C:002FH         LINE#         58
+  C:0032H         LINE#         59
+  C:003AH         LINE#         60
+  C:0042H         LINE#         61
+  C:004AH         LINE#         62
+  C:0050H         LINE#         63
+  C:0056H         LINE#         64
+  C:0056H         LINE#         65
+  C:0060H         LINE#         66
+  C:0061H         LINE#         67
+  C:0063H         LINE#         68
+  C:0069H         LINE#         69
+  C:0070H         LINE#         70
+  C:0072H         LINE#         71
+  -------         ENDPROC       ISR_INT0
+  -------         PROC          DEFAULT
+  C:00E7H         LINE#         72
+  C:00E7H         LINE#         73
+  C:00E7H         LINE#         74
+  C:00EAH         LINE#         75
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2022  12:18:09  PAGE 4
+
+
+  C:00EDH         LINE#         76
+  -------         ENDPROC       DEFAULT
+  -------         PROC          MAIN
+  C:0013H         LINE#         78
+  C:0013H         LINE#         79
+  C:0013H         LINE#         80
+  C:0016H         LINE#         81
+  C:0019H         LINE#         82
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ZAD2
+
+Program Size: data=12.0 xdata=0 code=242
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
